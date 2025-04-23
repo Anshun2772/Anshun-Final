@@ -1,169 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashirwad Super Market</title>
-    <style>
-        /* Basic Styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff9e6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #ffcc00;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        .product-grid {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .product-item {
-            background-color: #f2e1a1;
-            padding: 20px;
-            border: 1px solid #ccc;
-            margin: 10px;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #ffcc00;
-            text-align: center;
-            padding: 10px;
-        }
-
-        #scroll-top-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffcc00;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        #scroll-top-btn:hover {
-            background-color: #e6b800;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashirwad Super Market</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf6e3;
+      color: #333;
+    }
+    header {
+      background-color: #f4d03f;
+      color: #000;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin: 0 15px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #fff8dc, #fff3b0);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+    .products, .contact, .order-form {
+      background-color: #ffffff;
+      margin: 20px 0;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product-item {
+      background-color: #fdf1c8;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .product-item:hover {
+      transform: scale(1.03);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea, select {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #f4d03f;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e2bd2a;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f4d03f;
+      color: #000;
+      position: relative;
+    }
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 100;
+      background-color: #f4d03f;
+      color: #000;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Ashirwad Super Market</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#order">Order</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Ashirwad Super Market</h1>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section id="home">
-        <h2>Welcome to Ashirwad Super Market</h2>
-        <p>Your one-stop shop for all your grocery needs.</p>
-    </section>
+  <section class="hero">
+    <h1>Welcome to Ashirwad Super Market</h1>
+    <p>Your neighborhood’s go-to place for everyday essentials.</p>
+  </section>
 
-    <section id="products">
-        <h2>Our Products</h2>
-        <div class="product-grid">
-            <div class="product-item">Fruits & Vegetables</div>
-            <div class="product-item">Dairy & Bakery</div>
-            <div class="product-item">Snacks & Beverages</div>
-        </div>
-    </section>
+  <section id="products" class="products">
+    <h2>Our Product Categories</h2>
+    <div class="product-list">
+      <div class="product-item">
+        <h3>Fruits & Vegetables</h3>
+        <p>Fresh produce sourced daily from local farmers.</p>
+      </div>
+      <div class="product-item">
+        <h3>Dairy & Bakery</h3>
+        <p>Fresh milk, paneer, bread, and snacks made with care.</p>
+      </div>
+      <div class="product-item">
+        <h3>Snacks & Beverages</h3>
+        <p>Your favorite chips, biscuits, and drinks in one place.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="order">
-        <h2>Place Your Order</h2>
-        <form id="order-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
+  <section id="order" class="order-form">
+    <h2>Place Your Order</h2>
+    <form onsubmit="submitOrder(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Product Needed" required />
+      <textarea placeholder="Address" required></textarea>
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
 
-            <label for="product">Select Product:</label>
-            <select id="product" name="product" required>
-                <option value="fruits">Fruits</option>
-                <option value="dairy">Dairy</option>
-                <option value="snacks">Snacks</option>
-            </select>
+  <section id="contact" class="contact">
+    <h2>Supplier Inquiry</h2>
+    <form onsubmit="submitContact(event)">
+      <input type="text" placeholder="Company Name" required />
+      <input type="text" placeholder="Contact Number" required />
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </section>
 
-            <button type="submit">Submit Order</button>
-        </form>
-    </section>
+  <footer>
+    <p>&copy; <span id="year"></span> Ashirwad Super Market</p>
+  </footer>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <label for="supplier-name">Supplier Name:</label>
-            <input type="text" id="supplier-name" name="supplier-name" required>
-            
-            <label for="supplier-inquiry">Inquiry:</label>
-            <textarea id="supplier-inquiry" name="supplier-inquiry" required></textarea>
+  <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
 
-            <button type="submit">Submit Inquiry</button>
-        </form>
-    </section>
+  <script>
+    function submitOrder(e) {
+      e.preventDefault();
+      alert('Order submitted! Thank you.');
+    }
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Ashirwad Super Market. All rights reserved.</p>
-    </footer>
+    function submitContact(e) {
+      e.preventDefault();
+      alert('Inquiry sent! We will contact you soon.');
+    }
 
-    <button id="scroll-top-btn" onclick="scrollToTop()">Back to Top</button>
+    const topButton = document.getElementById('backToTopBtn');
 
-    <script>
-        // Scroll to Top Button
-        window.onscroll = function() { toggleScrollButton() };
+    window.onscroll = function() {
+      topButton.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? 'block' : 'none';
+    };
 
-        function toggleScrollButton() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("scroll-top-btn").style.display = "block";
-            } else {
-                document.getElementById("scroll-top-btn").style.display = "none";
-            }
-        }
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        // Dynamic Year in Footer
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-
-        // Form Validation for Order Form
-        document.getElementById("order-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Your order has been submitted successfully!");
-        });
-
-        // Form Validation for Supplier Inquiry Form
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Your inquiry has been submitted successfully!");
-        });
-    </script>
+    document.getElementById("year").innerText = new Date().getFullYear();
+  </script>
 </body>
 </html>
